@@ -11,17 +11,16 @@ import {
 
 const Profile_Menu = [
   {
-    title: "Profile",
+    id: 0,
+    title: "Profil",
     icon: <User />,
   },
   {
-    title: "Settings",
+    id: 1,
+    title: "Paramètres",
     icon: <Gear />,
   },
-  {
-    title: "Profile",
-    icon: <SignOut />,
-  },
+  { id: 2, title: "Profil", icon: <SignOut /> },
 ];
 
 const Nav_Buttons = [
@@ -131,69 +130,75 @@ const ChatList = [
 
 const Chat_History = [
   {
+    id: 0,
     type: "msg",
-    message: "Hi 👋🏻, How are ya ?",
+    message: "Hey 👋🏻, Comment tu vas ? ?",
     incoming: true,
     outgoing: false,
   },
+  { id: 1, type: "divider", text: "Aujourd'hui" },
   {
-    type: "divider",
-    text: "Today",
-  },
-  {
+    id: 2,
     type: "msg",
-    message: "Hi 👋 Panda, not bad, u ?",
+    message: "Hello 👋 Panda, pas mal et toi ?",
     incoming: false,
     outgoing: true,
   },
   {
+    id: 3,
     type: "msg",
-    message: "Can you send me an abstarct image?",
+    message: "Peux-tu m'envoyer ton image abstraite?",
     incoming: false,
     outgoing: true,
   },
   {
+    id: 4,
     type: "msg",
-    message: "Ya sure, sending you a pic",
+    message: "Ouep, je te passe l'image",
     incoming: true,
     outgoing: false,
   },
 
   {
+    id: 5,
     type: "msg",
     subtype: "img",
-    message: "Here You Go",
+    message: "La Voilà!",
     img: faker.image.abstract(),
     incoming: true,
     outgoing: false,
   },
   {
+    id: 6,
     type: "msg",
-    message: "Can you please send this in file format?",
+    message: "Tu veux bien m'envoyer le format du fichier?",
     incoming: false,
     outgoing: true,
   },
 
   {
+    id: 7,
     type: "msg",
     subtype: "doc",
-    message: "Yes sure, here you go.",
+    message: "Ouep, si tu veux. Le voilà.",
     incoming: true,
     outgoing: false,
   },
   {
+    id: 8,
     type: "msg",
     subtype: "link",
     preview: faker.image.cats(),
-    message: "Yep, I can also do that",
+    message: "Yes je peux aussi faire ça",
     incoming: true,
     outgoing: false,
   },
   {
+    id: 9,
     type: "msg",
     subtype: "reply",
-    reply: "This is a reply",
-    message: "Yep, I can also do that",
+    reply: "C'est une réponse",
+    message: "Yes je peux aussi faire ça",
     incoming: false,
     outgoing: true,
   },
@@ -201,22 +206,22 @@ const Chat_History = [
 
 const Message_options = [
   {
-    title: "Reply",
+    title: "Répondre",
   },
   {
-    title: "React to message",
+    title: "Réagir au message",
   },
   {
-    title: "Forward message",
+    title: "Transférer le message",
   },
   {
-    title: "Star message",
+    title: "Apprécier le message",
   },
   {
-    title: "Report",
+    title: "Signaler",
   },
   {
-    title: "Delete Message",
+    title: "Supprimer le message",
   },
 ];
 
