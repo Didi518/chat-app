@@ -1,7 +1,7 @@
 import React from "react";
 
 const LoadingScreen = () => {
-  return <>Loading...</>;
+  return <>Chargement...</>;
 };
 
 export default LoadingScreen;
