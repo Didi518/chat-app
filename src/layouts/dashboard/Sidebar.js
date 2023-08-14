@@ -17,6 +17,38 @@ import { Nav_Buttons, Profile_Menu } from "../../data";
 import useSettings from "../../hooks/useSettings";
 import { faker } from "@faker-js/faker";
 import Logo from "../../assets/Images/logo.ico";
+import { useNavigate } from "react-router-dom";
+
+const getPath = (index) => {
+  switch (index) {
+    case 0:
+      return "/app";
+    case 1:
+      return "/groupe";
+    case 2:
+      return "/appel";
+    case 3:
+      return "/parametres";
+
+    default:
+      break;
+  }
+};
+
+const getMenuPath = (idx) => {
+  switch (idx) {
+    case 0:
+      return "/profil";
+    case 1:
+      return "/parametres";
+    case 2:
+      // TODO => Update token & set isAuth = false
+      return "/auth/connexion";
+
+    default:
+      break;
+  }
+};
 
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
@@ -24,6 +56,7 @@ const Sidebar = () => {
   const { onToggleMode } = useSettings();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const navigate = useNavigate();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -89,6 +122,7 @@ const Sidebar = () => {
                   key={el.index}
                   onClick={() => {
                     setSelected(el.index);
+                    navigate(getPath(el.index));
                   }}
                   sx={{
                     width: "max-content",
@@ -119,6 +153,7 @@ const Sidebar = () => {
               <IconButton
                 onClick={() => {
                   setSelected(3);
+                  navigate(getPath(3));
                 }}
                 sx={{
                   width: "max-content",
@@ -160,9 +195,17 @@ const Sidebar = () => {
             transformOrigin={{ vertical: "bottom", horizontal: "left" }}
           >
             <Stack spacing={1} px={1}>
-              {Profile_Menu.map((el) => (
-                <MenuItem key={el.id} onClick={handleClick}>
+              {Profile_Menu.map((el, idx) => (
+                <MenuItem
+                  key={el.id}
+                  onClick={() => {
+                    handleClick();
+                  }}
+                >
                   <Stack
+                    onClick={() => {
+                      navigate(getMenuPath(idx));
+                    }}
                     width={115}
                     direction="row"
                     alignItems={"center"}
