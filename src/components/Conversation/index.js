@@ -12,7 +12,7 @@ const Conversation = () => {
       <Header />
       <div className="scrollbar" style={{ overflowY: "auto" }}>
         <Box width={"100%"} sx={{ flexGrow: 1, height: "100%" }}>
-          <Message />
+          <Message menu={true} />
         </Box>
       </div>
       <Footer />
